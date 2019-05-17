@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>角色</title>
+</head>
+<body>
+    <h1>角色页面</h1>
+
+    {% if book %}
+        <ul>
+            {% for i in book.roleinfo_set.all %}
+                <li>{{i.name}}</li>
+            {% empty %}
+                <li>没有英雄</li>
+            {% endfor %}
+
+        </ul>
+
+    {% else %}
+        <li>没有英雄</li>
+    {% endif %}
+
+    <a href="{% url 'demo2:index' %}">主页</a>
+    <a href="{% url 'demo2:booklist' %}">书籍列表</a>
+
+</body>
+</html>

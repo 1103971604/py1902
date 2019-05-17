@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书列表</title>
+</head>
+<body>
+    <h1>图书列表</h1>
+    {% if books %}
+        <ul>
+            {% for i in books %}
+            <li><a href="{% url 'demo2:role' i.id %}">{{i.title}}</a></li>
+            {% empty %}
+                <li>没有书籍</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <li>没有书籍</li>
+    {% endif %}
+
+    <a href="{% url 'demo2:index' %}">返回主页</a>
+</body>
+</html>

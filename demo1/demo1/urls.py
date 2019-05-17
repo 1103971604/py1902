@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #                     demo2是文件夹名字 后面的.urls 是文件夹下面的urls.py文件
+    url('demo2/',include('demo2.urls',namespace='demo2'))
 
 
 ]
