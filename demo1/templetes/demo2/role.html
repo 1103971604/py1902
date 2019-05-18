@@ -10,7 +10,10 @@
     {% if book %}
         <ul>
             {% for i in book.roleinfo_set.all %}
-                <li>{{i.name}}</li>
+                <li>{{i.name}}
+                    <a href="{% url 'demo2:delrole' i.id %}">删除</a>
+                    <a href="{% url 'demo2:setrole' i.id %}">编辑</a>
+                </li>
             {% empty %}
                 <li>没有英雄</li>
             {% endfor %}
@@ -20,7 +23,8 @@
     {% else %}
         <li>没有英雄</li>
     {% endif %}
-
+    <a href="{% url 'demo2:addrole' book.id %}">添加角色</a>
+    <br>
     <a href="{% url 'demo2:index' %}">主页</a>
     <a href="{% url 'demo2:booklist' %}">书籍列表</a>
 

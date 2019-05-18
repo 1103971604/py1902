@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改</title>
+</head>
+<body>
+    <h1>角色信息</h1>
+    <form action="{% url 'demo2:setrole' role.id %}" method="post">
+        角色名: <input type="text" name="username" value="{{role.name}}">
+        <br>
+        年龄: <input type="number" min="0" name="age" value="{{role.age}}" >
+        <br>
+        性别：
+            {% if role.sex == '1' %}
+                <input type="radio" name="sex" value="1" checked>男
+                <input type="radio" name="sex" value="2">女
+            {% else %}
+                <input type="radio" name="sex" value="1" >男
+                <input type="radio" name="sex" value="2" checked>女
+            {% endif %}
+        <br>
+        <input type="submit" value="修改">
+
+    </form>
+</body>
+</html>

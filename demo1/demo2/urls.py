@@ -9,5 +9,13 @@ urlpatterns = [
     url(r'^index/$',index,name='index'),
     url(r'^booklist/$',booklist,name='booklist'),
     url(r'^role/(\d+)/$',role,name='role'),
+    url(r'^delbook/(\d+)/$',delbook,name='delbook'),
+    url(r'^delrole/(\d+)/$',delrole,name='delrole'),
+    url(r'^addbook/$',addbook,name='addbook'),
+    url(r'^addrole/(\d+)/$',addrole,name='addrole'),
+    url(r'^setbook/(\d+)/$',setbook,name='setbook'),
+    url(r'^setrole/(\d+)/$',setrole,name='setrole'),
+    # url(r'^/$'),
+
 
 ]

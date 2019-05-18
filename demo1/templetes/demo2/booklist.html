@@ -9,7 +9,10 @@
     {% if books %}
         <ul>
             {% for i in books %}
-            <li><a href="{% url 'demo2:role' i.id %}">{{i.title}}</a></li>
+            <li><a href="{% url 'demo2:role' i.id %}">{{i.title}}</a>
+                <a href="{% url 'demo2:delbook' i.id %}">删除</a>
+                <a href="{% url 'demo2:setbook' i.id %}">编辑</a>
+            </li>
             {% empty %}
                 <li>没有书籍</li>
             {% endfor %}
@@ -17,7 +20,7 @@
     {% else %}
         <li>没有书籍</li>
     {% endif %}
-
+    <a href="{% url 'demo2:addbook' %}">添加一本书</a>
     <a href="{% url 'demo2:index' %}">返回主页</a>
 </body>
 </html>

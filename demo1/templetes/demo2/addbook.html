@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加书</title>
+</head>
+<body>
+    <h1>添加书</h1>
+    <form action="{% url 'demo2:addbook' %}" method="post">
+        书名: <input type="text" placeholder="输入书名" name="bookname">
+        <input type="submit" value="添加">
+    </form>
+</body>
+</html>
